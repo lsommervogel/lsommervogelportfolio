@@ -22,7 +22,7 @@ export function ContactButtons() {
       <motion.a
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        href="/Resume.pdf"
+        href="./Resume.pdf"
         download
         className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 text-gray-300 hover:text-white transition-colors"
       >
