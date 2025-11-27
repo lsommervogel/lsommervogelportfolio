@@ -25,7 +25,7 @@ export function ProjectsGrid({ games, onGameSelect }: ProjectsGridProps) {
             <h1
               className="text-[18vh] sm:text-[28vh] md:text-[34vh] leading-[0.10]"
               style={{
-                fontSize: "clamp(3rem, 3vw + 1vh, 5vh)",
+                fontSize: "clamp(2rem, 4vw, 10vh)",
                 background:
                   "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
                 WebkitBackgroundClip: "text",
