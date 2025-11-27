@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-const NUM_STARS = 1000; // Adjust the number of stars as needed
+const NUM_STARS = 500; // Adjust the number of stars as needed
 
 function Stars() {
   const ref = useRef<any>(null);
@@ -13,6 +13,7 @@ function Stars() {
   });
 
   useFrame((_state, delta) => {
+    if (document.hidden) return;
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
@@ -40,11 +41,15 @@ interface StarsCanvasProps {
 
 const StarsCanvas: React.FC<StarsCanvasProps> = ({ className }) => (
   <div className={`${className ?? ""} stars-canvas-container w-full h-full`}>
-    <Canvas camera={{ position: [0, 0, 1] }}>
+    <Canvas
+      camera={{ position: [0, 0, 1] }}
+      dpr={[1, 1.5]}
+      performance={{ min: 0.5 }}
+    >
+      {" "}
       <Suspense fallback={null}>
         <Stars />
       </Suspense>
-
       <Preload all />
     </Canvas>
   </div>

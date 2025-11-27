@@ -58,7 +58,7 @@ export function HeroSection({}: HeroSectionProps) {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src="./videos/TrailerPenTest.mp4" type="video/mp4" />
+        <source src="./videos/Loop.mp4" type="video/mp4" />
         {/* Fallback gradient */}
         <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500"></div>
       </video>
