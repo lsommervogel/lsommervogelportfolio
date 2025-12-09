@@ -43,6 +43,8 @@ export function ProjectsGrid({ games, onGameSelect }: ProjectsGridProps) {
               >
                 <Typewriter
                   options={{
+                    cursor: "|",
+                    delay: 40,
                     strings: ["My Projects", "Try them !"],
                     autoStart: true,
                     loop: true,

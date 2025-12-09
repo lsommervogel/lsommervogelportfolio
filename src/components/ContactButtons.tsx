@@ -1,13 +1,19 @@
 import { Mail, FileText, Gamepad2 } from "lucide-react";
 import { motion } from "motion/react";
+import { useIsVertical } from "../hooks/useIsVertical";
 
 export function ContactButtons() {
+  const isVertical = useIsVertical();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 1 }}
-      className="flex items-start gap-3 sm:gap-4 flex-col"
+      className={
+        isVertical
+          ? "flex items-start gap-3 sm:gap-4 flex-col"
+          : "flex items-center gap-3 sm:gap-4 flex-row"
+      }
     >
       <motion.a
         whileHover={{ scale: 1.05 }}

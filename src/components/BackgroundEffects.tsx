@@ -1,4 +1,5 @@
 import StarsCanvas from "./Stars";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 type GradientInput =
   | string
@@ -106,12 +107,13 @@ export function BackgroundEffects({
 
   const gradientAStyle = { background: buildGradient(gA, "to bottom right") };
   const gradientBStyle = { background: buildGradient(gB, "to top left") };
-
+  const isMobile = useIsMobile();
   return (
     <>
       {/* Stars canvas as full fixed background */}
-      <StarsCanvas className="fixed inset-0 -z-30 w-full h-full pointer-events-none" />
-
+      {!isMobile && (
+        <StarsCanvas className="fixed inset-0 -z-30 w-full h-full pointer-events-none" />
+      )}
       {/* Animated Gradient Background (renders above stars) */}
       <div
         className="fixed inset-0 z-10 pointer-events-none"
@@ -140,7 +142,6 @@ export function BackgroundEffects({
           return <div key={i} className={classes} style={style}></div>;
         })}
       </div>
-
       {/* Enhanced Noise Texture (above gradients) */}
       <div
         className="fixed inset-0 z-20 opacity-[0.08] pointer-events-none mix-blend-overlay"

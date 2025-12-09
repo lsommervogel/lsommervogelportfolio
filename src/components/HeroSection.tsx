@@ -133,6 +133,8 @@ export function HeroSection({}: HeroSectionProps) {
               >
                 <Typewriter
                   options={{
+                    cursor: "|",
+                    delay: 40,
                     strings: ["Game Development", "Software Engineering"],
                     autoStart: true,
                     loop: true,
